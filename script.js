@@ -1,5 +1,138 @@
+// ============================================================
 // Footer year
+// ============================================================
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// ============================================================
+// Scroll progress bar
+// ============================================================
+(function () {
+  const bar = document.getElementById('scrollProgress');
+  if (!bar) return;
+  function update() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+// ============================================================
+// Nav background on scroll + active link highlighting
+// ============================================================
+(function () {
+  const nav = document.getElementById('nav');
+  const sections = document.querySelectorAll('section[id], header[id]');
+  const navLinks = document.querySelectorAll('.nav-links a[data-nav]');
+
+  function onScroll() {
+    if (window.scrollY > 20) {
+      nav.style.borderColor = 'var(--line)';
+    }
+
+    let currentId = null;
+    sections.forEach((sec) => {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top <= 120 && rect.bottom > 120) {
+        currentId = sec.id;
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.toggle('active-link', link.dataset.nav === currentId);
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+// ============================================================
+// Mobile menu toggle
+// ============================================================
+(function () {
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+
+  toggle.addEventListener('click', () => {
+    const isOpen = links.classList.toggle('nav-open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // close menu when a link is tapped
+  links.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => {
+      links.classList.remove('nav-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+// ============================================================
+// Back to top button
+// ============================================================
+(function () {
+  const btn = document.getElementById('backToTop');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 500);
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+// ============================================================
+// Scroll reveal via Intersection Observer
+// ============================================================
+(function () {
+  const targets = document.querySelectorAll('.reveal');
+  if (!targets.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach((t) => t.classList.add('in-view'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  targets.forEach((t) => observer.observe(t));
+})();
+
+// ============================================================
+// Magnetic button effect (subtle pull toward cursor)
+// ============================================================
+(function () {
+  const buttons = document.querySelectorAll('.magnetic');
+  if (!buttons.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia('(pointer: coarse)').matches) return; // skip on touch
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.15}px, ${y * 0.25}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+})();
 
 // ============================================================
 // Radar sweep — ambient hero animation (PPI-style)
@@ -123,7 +256,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
   function staticFrame() {
     drawStatic();
-    // draw a fixed sweep line for reduced-motion users, no animation loop
     angle = 5.5;
     drawSweep();
   }
