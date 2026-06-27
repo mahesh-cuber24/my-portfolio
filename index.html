@@ -3,20 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Umaa Maheswaran V — AI/ML Engineer | Computer Vision & Edge AI</title>
-<meta name="description" content="Umaa Maheswaran V — AI/ML Engineer specialising in computer vision, radar signal processing, and edge AI deployment. Building real-time intelligent systems from notebook to deployed inference.">
-<meta name="keywords" content="AI Engineer, Machine Learning Engineer, Computer Vision, Edge AI, Radar Signal Processing, CUDA, TensorRT, PyTorch, Defence Technology">
-<meta name="author" content="Umaa Maheswaran V">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Umaa Maheswaran V — AI/ML Engineer">
-<meta property="og:description" content="Computer vision, radar signal processing, and edge AI deployment — from notebook to real-time inference.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="images/profile.jpg">
-
-<link rel="icon" type="image/png" href="images/favicon.png">
-
+<title>Umaa Maheswaran V — AI/ML Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,23 +11,17 @@
 </head>
 <body>
 
-<!-- scroll progress bar -->
-<div class="scroll-progress" id="scrollProgress"></div>
-
 <!-- ============ NAV ============ -->
-<nav class="nav" id="nav">
+<nav class="nav">
   <div class="nav-inner">
     <a href="#top" class="nav-mark">UM<span class="dot">.</span></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="#about" data-nav="about">About</a>
-      <a href="#work" data-nav="work">Work</a>
-      <a href="#stack" data-nav="stack">Stack</a>
-      <a href="#projects" data-nav="projects">Projects</a>
-      <a href="#contact" data-nav="contact">Contact</a>
-      <a href="resume.pdf" class="nav-cta" download>Resume ↗</a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <!-- Keep your resume PDF beside index.html and update this filename if needed. -->
+      <a href="resume.pdf" class="nav-cta" target="_blank" rel="noopener noreferrer">Resume ↗</a>
     </div>
   </div>
 </nav>
@@ -49,7 +30,7 @@
 <header id="top" class="hero">
   <canvas id="radar" class="radar-canvas" aria-hidden="true"></canvas>
   <div class="hero-inner">
-    <p class="eyebrow">SYS.00 — STATUS: ACTIVE / OPEN TO ROLES</p>
+    <p class="eyebrow">SYS.00 — STATUS: ACTIVE / ML ENGINEER · DATA ENGINEER</p>
     <h1 class="hero-title">
       Umaa Maheswaran V
     </h1>
@@ -57,18 +38,19 @@
       AI/ML Engineer — Computer Vision &amp; Edge Intelligence
     </p>
     <p class="hero-desc">
+      <!-- TODO: tweak this to taste -->
       I build real-time perception systems — from radar signal pipelines to
       CNN-based recognition models — and take them from notebook to
       edge-deployed inference on constrained hardware.
     </p>
     <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary magnetic">View Projects</a>
-      <a href="#contact" class="btn btn-ghost magnetic">Get in Touch</a>
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
     </div>
     <div class="hero-meta">
-      <span>Bengaluru, India</span>
+      <span><!-- TODO: location --> Bengaluru, India</span>
       <span class="sep">/</span>
-      <span>AI/ML Intern @ Sanlayan Technologies</span>
+      <span><!-- TODO: current role --> AI/ML Intern @ Sanlayan Technologies</span>
     </div>
   </div>
   <div class="scroll-cue" aria-hidden="true">
@@ -77,37 +59,13 @@
   </div>
 </header>
 
-<!-- ============ SIGNAL STRIP ============ -->
-<section class="signal-strip">
-  <div class="signal-strip-inner">
-    <div class="stat reveal">
-      <span class="stat-value">85<small>%</small></span>
-      <span class="stat-label">Activity recognition accuracy</span>
-    </div>
-    <div class="stat reveal">
-      <span class="stat-value">Top 10<small>/200+</small></span>
-      <span class="stat-label">ELCIA Sense2Scale Hackathon</span>
-    </div>
-    <div class="stat reveal">
-      <span class="stat-value">&lt;15<small>s</small></span>
-      <span class="stat-label">Rubik's cube solve (for fun)</span>
-    </div>
-    <div class="stat reveal">
-      <span class="stat-value">4<small>mo</small></span>
-      <span class="stat-label">Defence-sector AI/ML internship</span>
-    </div>
-  </div>
-</section>
-
-
-
-
 <!-- ============ ABOUT ============ -->
 <section id="about" class="section">
   <div class="section-inner">
-    <p class="section-label reveal">SYS.01 — ABOUT</p>
+    <p class="section-label">SYS.01 — ABOUT</p>
     <div class="about-grid">
-      <div class="about-text reveal">
+      <div class="about-text">
+        <!-- TODO: write your real bio, 2-3 short paragraphs -->
         <p>
           I specialise in computer vision, adaptive intelligent systems, and
           edge AI deployment — building production-oriented ML pipelines for
@@ -119,23 +77,23 @@
           final-year hybrid aerial-ground robotics project.
         </p>
       </div>
-      <div class="about-facts reveal">
+      <div class="about-facts">
         <dl>
           <div class="fact-row">
             <dt>Based in</dt>
-            <dd>Bengaluru, India</dd>
+            <dd><!-- TODO --> Bengaluru, India</dd>
           </div>
           <div class="fact-row">
             <dt>Focus</dt>
-            <dd>Computer Vision · Edge AI · Signal Processing</dd>
+            <dd>Machine Learning · Edge AI · </dd>
           </div>
           <div class="fact-row">
             <dt>Education</dt>
-            <dd>B.Tech ECE, Amrita Vishwa Vidyapeetham</dd>
+            <dd><!-- TODO --> B.Tech ECE, Amrita Vishwa Vidyapeetham</dd>
           </div>
           <div class="fact-row">
             <dt>Open to</dt>
-            <dd>ML Engineer · CV Engineer · Edge AI roles</dd>
+            <dd>ML Engineer · Data Engineer</dd>
           </div>
         </dl>
       </div>
@@ -146,9 +104,10 @@
 <!-- ============ EXPERIENCE ============ -->
 <section id="work" class="section section-alt">
   <div class="section-inner">
-    <p class="section-label reveal">SYS.02 — EXPERIENCE</p>
+    <p class="section-label">SYS.02 — EXPERIENCE</p>
     <div class="timeline">
-      <div class="timeline-item reveal">
+      <!-- TODO: duplicate .timeline-item block for additional roles -->
+      <div class="timeline-item">
         <div class="timeline-when">
           <span>Mar 2026</span>
           <span class="timeline-dash">→</span>
@@ -175,90 +134,38 @@
   </div>
 </section>
 
-<!-- ============ FEATURED WORK ============ -->
-<section id="featured" class="section featured-section">
-  <div class="section-inner">
-    <p class="section-label reveal">SYS.03 — FEATURED WORK</p>
-    <div class="featured-grid reveal">
-      <div class="featured-text">
-        <h2>Adaptive Radar AI for Defence Systems</h2>
-        <p>
-          At Sanlayan Technologies, I work on real-time radar signal
-          processing and adaptive detection pipelines — replacing
-          conventional rule-based processing with ML-driven approaches
-          that hold up under noisy, dynamic operating conditions.
-        </p>
-        <p>
-          The work spans the full path from algorithm to deployment:
-          building CUDA-accelerated inference pipelines, applying
-          structured pruning and quantization to fit models on constrained
-          edge hardware, and building the Qt-based visualization layer
-          operators actually interact with.
-        </p>
-        <div class="tag-row">
-          <span class="tag tag-accent">Radar Signal Processing</span>
-          <span class="tag tag-accent">Edge AI Deployment</span>
-          <span class="tag tag-accent">Defence AI Systems</span>
-        </div>
-      </div>
-      <div class="featured-visual">
-        <svg viewBox="0 0 300 300" class="featured-svg" aria-hidden="true">
-          <circle cx="150" cy="150" r="60" class="radial-ring" />
-          <circle cx="150" cy="150" r="100" class="radial-ring" />
-          <circle cx="150" cy="150" r="140" class="radial-ring" />
-          <line x1="10" y1="150" x2="290" y2="150" class="radial-line" />
-          <line x1="150" y1="10" x2="150" y2="290" class="radial-line" />
-          <circle cx="205" cy="110" r="4" class="radial-blip" />
-          <circle cx="95" cy="195" r="4" class="radial-blip" />
-          <circle cx="180" cy="230" r="4" class="radial-blip" />
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ STACK ============ -->
-<section id="stack" class="section section-alt">
+<section id="stack" class="section">
   <div class="section-inner">
-    <p class="section-label reveal">SYS.04 — STACK</p>
+    <p class="section-label">SYS.03 — STACK</p>
     <div class="stack-grid">
-      <div class="stack-group reveal">
+      <!-- TODO: edit categories/items freely -->
+      <div class="stack-group">
         <h4>Languages</h4>
         <ul>
           <li>Python</li>
           <li>C / C++</li>
           <li>SQL</li>
-          <li>Embedded C</li>
+          <li>Java</li>
         </ul>
       </div>
-      <div class="stack-group reveal">
+      <div class="stack-group">
         <h4>AI / Computer Vision</h4>
         <ul>
           <li>PyTorch</li>
           <li>OpenCV</li>
           <li>Scikit-learn</li>
           <li>CNNs · GANs</li>
-          <li>ONNX</li>
-          <li>NumPy</li>
-          <li>Pandas</li>
         </ul>
       </div>
-      <div class="stack-group reveal">
+      <div class="stack-group">
         <h4>Systems &amp; Deployment</h4>
         <ul>
           <li>CUDA</li>
           <li>TensorRT</li>
           <li>Docker</li>
           <li>Linux</li>
-          <li>Qt</li>
-        </ul>
-      </div>
-      <div class="stack-group reveal">
-        <h4>Embedded / Robotics</h4>
-        <ul>
-          <li>STM32</li>
-          <li>BetaFlight</li>
-          <li>PID Control</li>
+          <li>Git</li>
         </ul>
       </div>
     </div>
@@ -266,44 +173,43 @@
 </section>
 
 <!-- ============ PROJECTS ============ -->
-<section id="projects" class="section">
+<section id="projects" class="section section-alt">
   <div class="section-inner">
-    <p class="section-label reveal">SYS.05 — PROJECTS</p>
+    <p class="section-label">SYS.04 — PROJECTS</p>
     <div class="project-list">
 
-      <article class="project reveal">
-        <a href="#" class="project-visual project-link-wrap">
-          <img src="images/activity-recognition.png" alt="Activity Recognition System" loading="lazy" class="project-img">
-        </a>
+      <!-- TODO: swap image, links, copy per project. Duplicate article.project for more -->
+      <article class="project">
+        <div class="project-visual">
+          <!-- placeholder waveform graphic; replace with a real screenshot/gif if you have one -->
+          <svg viewBox="0 0 400 200" class="project-svg" aria-hidden="true">
+            <polyline points="0,100 40,100 55,40 70,160 85,100 120,100 135,60 150,140 165,100 400,100" />
+          </svg>
+        </div>
         <div class="project-body">
           <h3>Activity Recognition System</h3>
           <p>
             CNN-based human activity recognition pipeline on time-series
-            sensor data, with augmentation workflows that lifted
-            generalization and F1-score.
+            sensor data, with augmentation workflows for robust predictions.
           </p>
-          <div class="highlight-row">
-            <span class="highlight">85%+ Accuracy</span>
-            <span class="highlight">+12% F1-score</span>
-          </div>
           <div class="tag-row">
             <span class="tag">PyTorch</span>
             <span class="tag">CNN</span>
             <span class="tag">NumPy</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/mahesh-cuber24" target="_blank" rel="noopener" class="project-btn">
-              <svg class="icon" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-              Code
-            </a>
+            <!-- Paste this project's full GitHub repository URL in href below. -->
+            <a href="https://github.com/mahesh-cuber24/Activity-Recognition-System">Github ↗</a>
           </div>
         </div>
       </article>
 
-      <article class="project reveal">
-        <a href="#" class="project-visual project-link-wrap">
-          <img src="images/edge-gan.png" alt="Edge-Optimized Generative Image Model" loading="lazy" class="project-img">
-        </a>
+      <article class="project">
+        <div class="project-visual">
+          <svg viewBox="0 0 400 200" class="project-svg" aria-hidden="true">
+            <polyline points="0,120 60,120 80,30 100,180 130,90 160,90 180,150 220,150 240,60 270,60 290,120 400,120" />
+          </svg>
+        </div>
         <div class="project-body">
           <h3>Edge-Optimized Generative Image Model</h3>
           <p>
@@ -311,28 +217,24 @@
             pruning and post-training quantization for low-latency
             edge-deployed inference.
           </p>
-          <div class="highlight-row">
-            <span class="highlight">Edge Deployed</span>
-            <span class="highlight">Quantized</span>
-          </div>
           <div class="tag-row">
             <span class="tag">PyTorch</span>
             <span class="tag">GANs</span>
             <span class="tag">OpenCV</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/mahesh-cuber24" target="_blank" rel="noopener" class="project-btn">
-              <svg class="icon" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-              Code
-            </a>
+            <!-- Replace # with this project's full GitHub repository URL. -->
+            <a href="#">Github ↗</a>
           </div>
         </div>
       </article>
 
-      <article class="project reveal">
-        <a href="#" class="project-visual project-link-wrap">
-          <img src="images/hybrid-robot.png" alt="Hybrid Aerial-Ground Robot" loading="lazy" class="project-img">
-        </a>
+      <article class="project">
+        <div class="project-visual">
+          <svg viewBox="0 0 400 200" class="project-svg" aria-hidden="true">
+            <polyline points="0,100 50,100 65,170 90,30 110,100 200,100 215,150 235,50 255,100 400,100" />
+          </svg>
+        </div>
         <div class="project-body">
           <h3>Hybrid Aerial-Ground Robot</h3>
           <p>
@@ -340,20 +242,14 @@
             STM32-based flight controller and PID-tuned thrust-vectoring
             via BetaFlight.
           </p>
-          <div class="highlight-row">
-            <span class="highlight">Dual-mode Locomotion</span>
-            <span class="highlight">Final Year Project</span>
-          </div>
           <div class="tag-row">
             <span class="tag">STM32</span>
             <span class="tag">BetaFlight</span>
             <span class="tag">PID Control</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/mahesh-cuber24" target="_blank" rel="noopener" class="project-btn">
-              <svg class="icon" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-              Code
-            </a>
+            <!-- Replace # with this project's full GitHub repository URL. -->
+            <a href="#">Github ↗</a>
           </div>
         </div>
       </article>
@@ -365,49 +261,33 @@
 <!-- ============ CONTACT ============ -->
 <section id="contact" class="section contact-section">
   <div class="section-inner">
-    <p class="section-label reveal">SYS.06 — CONTACT</p>
-    <h2 class="contact-title reveal">Let's build something that ships to the edge.</h2>
-    <p class="contact-sub reveal">
-      Open to AI/ML Engineer, Computer Vision, and Edge AI roles.
+    <p class="section-label">SYS.05 — CONTACT</p>
+    <h2 class="contact-title">Let's build something that ships to the edge.</h2>
+    <p class="contact-sub">
+      Open to ML Engineer and Data Engineer roles.
     </p>
-    <div class="contact-links reveal">
+    <div class="contact-links">
+      <!-- TODO: fill in real links/handles -->
       <a href="mailto:mahcubr24@gmail.com" class="contact-link">
-        <span class="contact-link-left">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg>
-          <span class="contact-label">Email</span>
-        </span>
+        <span class="contact-label">Email</span>
         <span class="contact-value">mahcubr24@gmail.com ↗</span>
       </a>
-      <a href="https://www.linkedin.com/in/umaamaheswaran-v/" target="_blank" rel="noopener" class="contact-link">
-        <span class="contact-link-left">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56z"/></svg>
-          <span class="contact-label">LinkedIn</span>
-        </span>
-        <span class="contact-value">/in/umaamaheswaran-v ↗</span>
+      <a href="#" class="contact-link">
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value"><linkedin class="com">
+        <in>umaamaheswaran-v ↗</span>
       </a>
-      <a href="https://github.com/mahesh-cuber24" target="_blank" rel="noopener" class="contact-link">
-        <span class="contact-link-left">
-          <svg class="icon" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-          <span class="contact-label">GitHub</span>
-        </span>
+      <a href="https://github.com/mahesh-cuber24" class="contact-link" target="_blank" rel="noopener noreferrer">
+        <span class="contact-label">GitHub</span>
         <span class="contact-value">github.com/mahesh-cuber24 ↗</span>
-      </a>
-      <a href="D:\Portfolio\my-portfolio\UmaaMaheswaran_Fractal_Resume.pdf" download class="contact-link">
-        <span class="contact-link-left">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M5 21h14"/></svg>
-          <span class="contact-label">Resume</span>
-        </span>
-        <span class="contact-value">Download PDF ↗</span>
       </a>
     </div>
   </div>
 </section>
 
 <footer class="footer">
-  <p>© <span id="year"></span> Umaa Maheswaran V. Designed &amp; developed by me.</p>
+  <p>Built by Umaa Maheswaran V — <span id="year"></span></p>
 </footer>
-
-<button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 
 <script src="script.js"></script>
 </body>
