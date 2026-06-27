@@ -736,7 +736,11 @@ a { color: inherit; text-decoration: none; }
   display: block;
   position: relative;
   overflow: hidden;
-  min-height: 200px;
+  width: 220px;
+  aspect-ratio: 1 / 1;
+  justify-self: center;
+  align-self: center;
+  border-radius: 8px;
   background: var(--bg-alt);
 }
 
@@ -753,7 +757,9 @@ a { color: inherit; text-decoration: none; }
 .project-img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+  object-position: center;
   display: block;
   transition: transform 0.5s var(--ease);
 }
@@ -804,7 +810,10 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 800px) {
   .project { grid-template-columns: 1fr; }
-  .project-visual { min-height: 180px; }
+  .project-visual {
+    width: min(220px, calc(100% - 40px));
+    margin: 20px auto 0;
+  }
   .project-body { padding: 28px 24px; }
 }
 
