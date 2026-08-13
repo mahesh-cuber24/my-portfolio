@@ -1,0 +1,194 @@
+@import 'tailwindcss';
+
+/* Class-driven dark mode so the nav toggle can override the OS setting. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------
+   Palette — warm bone paper against near-black ink, one blaze accent.
+   Semantic vars swap per theme; @theme inline makes the Tailwind
+   utilities point at the vars instead of copying their values.
+   ------------------------------------------------------------------ */
+:root {
+  --c-bg: #edeae3;
+  --c-surface: #f6f4ef;
+  --c-raised: #ffffff;
+  --c-ink: #14131a;
+  --c-muted: #6b675f;
+  /* 5.0:1 on the bone background — the old #9b968c only managed 2.5:1 */
+  --c-faint: #67625a;
+  --c-line: rgb(20 19 26 / 0.14);
+  --c-line-strong: rgb(20 19 26 / 0.28);
+  --c-accent: #e33d10;
+  /* The vibrant accent is only 3.5:1 on bone, which is fine for large display type
+     and UI marks but fails for small text — this darker step is for labels. */
+  --c-accent-text: #c22f07;
+  --c-accent-ink: #ffffff;
+  --c-glass: rgb(255 255 255 / 0.55);
+}
+
+.dark {
+  --c-bg: #0b0b0d;
+  --c-surface: #121215;
+  --c-raised: #17171b;
+  --c-ink: #edeae3;
+  --c-muted: #918c82;
+  /* 4.8:1 on the near-black background — #6a655d was only 3.4:1 */
+  --c-faint: #837d73;
+  --c-line: rgb(237 234 227 / 0.14);
+  --c-line-strong: rgb(237 234 227 / 0.3);
+  --c-accent: #ff5c2e;
+  /* already 6.4:1 against the dark background, so no separate text step needed */
+  --c-accent-text: #ff5c2e;
+  --c-accent-ink: #14131a;
+  --c-glass: rgb(255 255 255 / 0.04);
+}
+
+@theme inline {
+  --color-bg: var(--c-bg);
+  --color-surface: var(--c-surface);
+  --color-raised: var(--c-raised);
+  --color-ink: var(--c-ink);
+  --color-muted: var(--c-muted);
+  --color-faint: var(--c-faint);
+  --color-line: var(--c-line);
+  --color-line-strong: var(--c-line-strong);
+  --color-accent: var(--c-accent);
+  --color-accent-text: var(--c-accent-text);
+  --color-accent-ink: var(--c-accent-ink);
+  --color-glass: var(--c-glass);
+}
+
+@theme {
+  --font-display: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', ui-serif, Georgia, serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+  }
+
+  body {
+    background-color: var(--c-bg);
+    color: var(--c-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    /* stop the marquee and oversized type from widening the page */
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--c-ink);
+  }
+
+  ::selection {
+    background: var(--c-accent);
+    color: var(--c-accent-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--c-accent);
+    outline-offset: 3px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 9px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--c-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--c-line-strong);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--c-accent);
+  }
+
+  /* The custom cursor replaces the native one only where a real pointer exists. */
+  @media (hover: hover) and (pointer: fine) {
+    body[data-custom-cursor='on'],
+    body[data-custom-cursor='on'] * {
+      cursor: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    body,
+    body * {
+      cursor: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Frosted panel. Kept subtle — the design leans on rules and space, not glow. */
+  .panel {
+    background: var(--c-glass);
+    border: 1px solid var(--c-line);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+  }
+
+  /* Small uppercase mono label used for section indices and field names. */
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-faint);
+  }
+
+  /* Serif italic emphasis inside display headings. */
+  .serif-accent {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  /* Link that draws its underline on hover, left to right. */
+  .underline-sweep {
+    background-image: linear-gradient(var(--c-accent), var(--c-accent));
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .underline-sweep:hover {
+    background-size: 100% 1px;
+  }
+}
+
+@layer utilities {
+  .marquee-track {
+    animation: marquee 38s linear infinite;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      /* the track renders its content twice, so half a loop is seamless */
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+}
